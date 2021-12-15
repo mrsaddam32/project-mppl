@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/assets/vendor/AdminLTE-3.1.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/vendor/AdminLTE-3.1.0/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">

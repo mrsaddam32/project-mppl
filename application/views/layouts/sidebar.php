@@ -82,6 +82,14 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url() ?>dashboard/berita" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            Daftar Berita
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

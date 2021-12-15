@@ -9,6 +9,7 @@ function is_logged_in()
         redirect('auth/login');
     } else {
         $id = $ci->session->userdata('id');
+        $username = $ci->session->userdata('username');
         $status = $ci->session->userdata('status');
         $id_warga = $ci->session->userdata('id_warga');
         $nik_warga = $ci->session->userdata('nik_warga');

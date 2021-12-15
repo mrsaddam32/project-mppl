@@ -32,6 +32,24 @@ class Dashboard extends CI_Controller
         $this->load->view('layouts/footer');
     }
 
+    public function berita()
+    {
+        $user = $this->UserModel->cekData(['email' => $this->session->userdata('email')])
+            ->row_array();
+        $data = [
+            'nama' => $user['nama'],
+            'username' => $user['username'],
+            'status' => $user['status'],
+            'title' => 'Berita'
+        ];
+
+        $this->load->view('layouts/header', $data);
+        $this->load->view('layouts/navbar');
+        $this->load->view('layouts/sidebar', $data);
+        $this->load->view('dashboard/berita', $data);
+        $this->load->view('layouts/footer');
+    }
+
     public function index_warga()
     {
         $user = $this->WargaModel->cekData(['nik_warga' => $this->session->userdata('nik_warga')])
