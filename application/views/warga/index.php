@@ -63,7 +63,10 @@
                             <td><?= $row['status_perkawinan']; ?></td>
                             <td><?= $row['status_warga']; ?></td>
                             <td><?= $row['pekerjaan']; ?></td>
-                            <td><a href="<?= base_url('warga/hapus_warga/' . $row['nik_warga']) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus ?')">Hapus Data</a></td>
+                            <td>
+                                <a href="<?= base_url('warga/hapus_warga/' . $row['id_warga']) ?>" class="badge bg-danger" onclick="return confirm('Anda yakin ingin menghapus ?')">Hapus Data</a>
+                                <a href="<?= base_url('warga/edit_warga/' . $row['id_warga']) ?>" class="badge bg-warning">Edit Data</a>
+                            </td>
                         </tr>
                     </tbody>
                 <?php } ?>
