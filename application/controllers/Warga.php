@@ -96,8 +96,7 @@ class Warga extends CI_Controller
             $this->load->view('layouts/footer');
         } else {
             $this->WargaModel->editData();
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Data warga berhasil di edit</div>');
+            $this->session->set_flashdata('message', 'Data Warga berhasil diubah!');
             redirect('warga/index');
         }
     }
@@ -125,8 +124,7 @@ class Warga extends CI_Controller
         $this->form_validation->set_rules('pendidikan_terakhir', 'Pendidikan Terakhir', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Gagal Ditambahkan!</div>');
+            $this->session->set_flashdata('message', 'Data Gagal Ditambahkan!');
             redirect('warga/tambah');
         } else {
             $data = [
@@ -153,7 +151,7 @@ class Warga extends CI_Controller
             // die;
 
             $this->WargaModel->insertData($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data baru telah ditambahkan</div>');
+            $this->session->set_flashdata('message', 'Data baru telah ditambahkan');
             redirect('warga/index');
         }
     }
@@ -161,7 +159,7 @@ class Warga extends CI_Controller
     public function hapus_warga($id_warga)
     {
         $this->WargaModel->deleteData($id_warga);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus</div>');
+        $this->session->set_flashdata('message', 'Data berhasil dihapus');
         redirect('warga/index');
     }
 }

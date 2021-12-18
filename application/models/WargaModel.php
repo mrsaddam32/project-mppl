@@ -17,9 +17,9 @@ class WargaModel extends CI_Model
         return $this->db->insert('warga', $data);
     }
 
-    public function deleteData($nik_warga)
+    public function deleteData($id_warga)
     {
-        return $this->db->delete('warga', ['nik_warga' => $nik_warga]);
+        return $this->db->delete('warga', ['id_warga' => $id_warga]);
     }
 
     public function cekData($where = null)

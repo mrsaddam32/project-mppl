@@ -10,6 +10,8 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+<script src="<?= base_url() ?>/assets/js/sweetalert2.min.js"></script>
+<script src="<?= base_url() ?>/assets/js/app.js"></script>
 <!-- jQuery -->
 <script src="<?= base_url() ?>/assets/vendor/AdminLTE-3.1.0/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
