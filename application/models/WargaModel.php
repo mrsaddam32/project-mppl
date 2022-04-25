@@ -55,11 +55,16 @@ class WargaModel extends CI_Model
 
     public function countAll()
     {
-        return $this->db->count_all('warga');
+        return $this->db->get('warga')->num_rows();
     }
 
     public function countJenisKelamin($jenis_kelamin)
     {
         return $this->db->where('jenis_kelamin', $jenis_kelamin)->count_all_results('warga');
+    }
+
+    public function getDataPagination($limit, $start)
+    {
+        return $this->db->get('warga', $limit, $start)->result_array();
     }
 }

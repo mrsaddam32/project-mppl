@@ -20,7 +20,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">NIK Warga</label>
-                                        <input type="number" name="nik_warga" class="form-control" id="exampleFormControlInput1" autocomplete="off" maxlength="16" value="<?= $warga['nik_warga']; ?>">
+                                        <input type="number" name="nik_warga" class="form-control" id="exampleFormControlInput1" autocomplete="off" maxlength="16" value="<?= $warga['nik_warga']; ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="col">

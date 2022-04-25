@@ -12,16 +12,52 @@ class Warga extends CI_Controller
 
     public function index()
     {
+        $config['total_rows'] = $this->WargaModel->getWarga()->num_rows();
+        $config['base_url'] = 'http://localhost:8080/pendataan-warga/warga/index';
+        $config['per_page'] = 10;
+        $config['full_tag_open'] = '<nav aria-label="Page navigation example"><ul class="pagination mt-3 justify-content-center">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link'] = 'First';
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link'] = 'Last';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = ['class' => 'page-link'];
+        $config['num_links'] = 5;
+
+        $this->pagination->initialize($config);
+
         $user = $this->UserModel->cekData(['email' => $this->session->userdata('email')])
             ->row_array();
+
         $data = [
             'nama' => $user['nama'],
             'status' => $user['status'],
             'username' => $user['username'],
             'created_at' => $user['created_at'],
-            'warga' => $this->WargaModel->getWarga()->result_array(),
-            'title' => 'Data Warga'
+            'title' => 'Data Warga',
         ];
+
+        $data['start'] = $this->uri->segment(3);
+        $data['warga'] = $this->WargaModel->getDataPagination($config['per_page'], $data['start']);
 
         $this->load->view('layouts/header', $data);
         $this->load->view('layouts/navbar');

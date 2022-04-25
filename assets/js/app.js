@@ -1,7 +1,7 @@
 const flashData = document
 	.getElementById("flash-data")
 	.getAttribute("data-flashdata");
-const btnHapus = document.getElementsByClassName("btn-hapus");
+const btnHapus = document.getElementById("btn-hapus");
 
 if (flashData) {
 	Swal.fire({
