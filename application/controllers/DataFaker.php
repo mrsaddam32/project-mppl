@@ -15,7 +15,7 @@ class DataFaker extends CI_Controller
     {
         $faker = Faker\Factory::create('id_ID');
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $data = [
                 'nik_warga' => '243000' . random_string('numeric', 10),
                 'nama_warga' => $faker->name,
