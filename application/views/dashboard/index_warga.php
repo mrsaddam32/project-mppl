@@ -11,6 +11,7 @@ curl_setopt_array($curl, [
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_USERAGENT => $_SERVER['HTTP_USER_AGENT'],
 ]);
 
 // Fetch news data from news api and decode json
