@@ -3,5 +3,5 @@ updates:
   - package-ecosystem: "composer"
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
     open-pull-requests-limit: 10
