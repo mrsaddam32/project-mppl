@@ -13,7 +13,7 @@ class Warga extends CI_Controller
     public function index()
     {
         $config['total_rows'] = $this->WargaModel->getWarga()->num_rows();
-        $config['base_url'] = 'http://localhost:8080/pendataan-warga/warga/index';
+        $config['base_url'] = 'http://localhost/pendataan-warga/warga/index';
         $config['per_page'] = 10;
         $config['full_tag_open'] = '<nav aria-label="Page navigation example"><ul class="pagination mt-3 justify-content-center">';
         $config['full_tag_close'] = '</ul></nav>';
