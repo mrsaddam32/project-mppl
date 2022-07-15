@@ -11,13 +11,14 @@ curl_setopt_array($curl, [
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_USERAGENT => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36',
 ]);
 
 // Fetch news data from news api and decode json
 $response = curl_exec($curl);
 $results = json_decode($response, true);
-// $err = curl_error($curl);
-// curl_close($curl);
+$err = curl_error($curl);
+curl_close($curl);
 
 ?>
 <div class="wrapper">

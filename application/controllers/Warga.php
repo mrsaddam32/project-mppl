@@ -132,7 +132,10 @@ class Warga extends CI_Controller
             $this->load->view('layouts/footer');
         } else {
             $this->WargaModel->editData();
-            $this->session->set_flashdata('message', 'Data Warga berhasil diubah!');
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+            <strong>Berhasil! </strong> mengubah data warga
+          </div>');
             redirect('warga/index');
         }
     }
@@ -160,7 +163,9 @@ class Warga extends CI_Controller
         $this->form_validation->set_rules('pendidikan_terakhir', 'Pendidikan Terakhir', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('message', 'Data Gagal Ditambahkan!');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Data warga gagal ditambah!
+          </div>');
             redirect('warga/tambah');
         } else {
             $data = [
@@ -187,7 +192,10 @@ class Warga extends CI_Controller
             // die;
 
             $this->WargaModel->insertData($data);
-            $this->session->set_flashdata('message', 'Data baru telah ditambahkan');
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+            <strong>Berhasil! </strong> menambah data warga
+          </div>');
             redirect('warga/index');
         }
     }
@@ -195,7 +203,10 @@ class Warga extends CI_Controller
     public function hapus_warga($id_warga)
     {
         $this->WargaModel->deleteData($id_warga);
-        $this->session->set_flashdata('message', 'Data berhasil dihapus');
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+        <strong>Berhasil!</strong> menghapus data warga
+      </div>');
         redirect('warga/index');
     }
 }

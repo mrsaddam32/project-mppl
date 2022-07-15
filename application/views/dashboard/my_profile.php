@@ -5,9 +5,9 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="row">
                     <div class="col-sm-6">
-                        <h1 class="m-0">My Profile</h1>
+                        <h1 class="m-0 mb-3">My Profile</h1>
                         <?= $this->session->flashdata('message'); ?>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

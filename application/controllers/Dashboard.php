@@ -142,8 +142,10 @@ class Dashboard extends CI_Controller
             $this->load->view('layouts/footer');
         } else {
             $this->UserModel->editUser();
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Profil anda berhasil diedit</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Berhasil! </strong> edit data user.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>');
             redirect('dashboard/profile');
         }
     }

@@ -8,7 +8,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Edit Data Warga</h1>
-                        <?php $this->session->flashdata('message') ?>
+                        <?= $this->session->flashdata('message') ?>
                         <?= validation_errors(); ?>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

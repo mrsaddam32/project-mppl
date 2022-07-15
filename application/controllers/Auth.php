@@ -59,7 +59,10 @@ class Auth extends CI_Controller
                         'nik_warga' => $warga['nik_warga'],
                     ];
                     $this->session->set_userdata($data);
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat datang ' . $warga['nama_warga'] . '</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                    <strong>Selamat Datang! </strong>' . $warga['nama_warga'] . '
+                  </div>');
                     redirect('dashboard/index_warga');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -93,7 +96,10 @@ class Auth extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     if ($user['status'] == 'Admin') {
-                        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat datang ' . $user['nama'] . '</div>');
+                        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                        <strong>Selamat Datang! </strong> ' . $user['nama'] . '
+                      </div>');
                         redirect('dashboard');
                     }
                 } else {

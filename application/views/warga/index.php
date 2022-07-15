@@ -8,10 +8,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Data Warga</h1>
-                        <a href="<?= base_url() ?>warga/tambah" class="btn btn-primary mt-2">Tambah Data Warga</a>
-                        <div class="mt-3">
-                            <div class="flash-data" id="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
-                        </div>
+                        <a href="<?= base_url() ?>warga/tambah" class="btn btn-primary mt-2 mb-3">Tambah Data Warga</a>
+                        <?= $this->session->flashdata('message') ?>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
