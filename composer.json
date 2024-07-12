@@ -20,6 +20,6 @@
 	},
 	"require-dev": {
 		"mikey179/vfsstream": "1.6.*",
-		"phpunit/phpunit": "^8.5.27"
+		"phpunit/phpunit": "^11.2.7"
 	}
 }
